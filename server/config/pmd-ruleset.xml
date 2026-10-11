@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="AutomatedCodeReviewRuleset"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Comprehensive PMD 7 ruleset for Automated Code Review and Software Quality Analysis.
+        Targets code smells, design complexity, resource management, and software quality metrics.
+    </description>
+
+    <!-- Design & Complexity Smells -->
+    <rule ref="category/java/design.xml/CyclomaticComplexity">
+        <properties>
+            <property name="methodReportLevel" value="10" />
+            <property name="classReportLevel" value="40" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+        <properties>
+            <property name="reportLevel" value="15" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="4" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/ExcessivePublicCount">
+        <properties>
+            <property name="minimum" value="20" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
+        <properties>
+            <property name="problemDepth" value="3" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/CollapsibleIfStatements" />
+    <rule ref="category/java/design.xml/SimplifyBooleanReturns" />
+    <rule ref="category/java/design.xml/GodClass" />
+    <rule ref="category/java/design.xml/DataClass" />
+    <rule ref="category/java/design.xml/CouplingBetweenObjects">
+        <properties>
+            <property name="threshold" value="15" />
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/ImmutableField" />
+
+    <!-- Best Practices & Dead Code Smells -->
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
+    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable" />
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" />
+    <rule ref="category/java/bestpractices.xml/MissingOverride" />
+    <rule ref="category/java/bestpractices.xml/SystemPrintln" />
+    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" />
+
+    <!-- Error Prone & Defect Rules -->
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock">
+        <properties>
+            <property name="allowCommentedBlocks" value="false" />
+        </properties>
+    </rule>
+    <rule ref="category/java/errorprone.xml/CloseResource" />
+    <rule ref="category/java/errorprone.xml/NullAssignment" />
+    <rule ref="category/java/errorprone.xml/AssignmentInOperand" />
+
+    <!-- Code Style & Naming -->
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions" />
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions" />
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions" />
+    <rule ref="category/java/codestyle.xml/EmptyControlStatement" />
+
+    <!-- Performance -->
+    <rule ref="category/java/performance.xml/StringInstantiation" />
+    <rule ref="category/java/performance.xml/InefficientStringBuffering" />
+</ruleset>

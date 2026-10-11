@@ -1,0 +1,16 @@
+{
+  "name": "automated-code-review-system",
+  "version": "1.0.0",
+  "description": "Automated Code Review Tool using AI and Software Quality Improvement System",
+  "private": true,
+  "scripts": {
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
