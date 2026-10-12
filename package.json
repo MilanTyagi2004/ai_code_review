@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "server": "npm --prefix server start",
-    "client": "npm --prefix client dev",
+    "client": "npm --prefix client run dev",
     "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
     "build": "npm --prefix client run build",
     "test": "npm --prefix server test"
